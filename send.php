@@ -4,7 +4,7 @@ require 'vendor/autoload.php';
 
 $sendgrid_username = 'osuhack';
 $sendgrid_password = 'osu_hack1';
-$to                = 'shashankmailster@gmail.com';
+$to                = 'agarwal.202@osu.edu';
 
 $sendgrid = new SendGrid($sendgrid_username, $sendgrid_password, array("turn_off_ssl_verification" => true));
 $email    = new SendGrid\Email();
