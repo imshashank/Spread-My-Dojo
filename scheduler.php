@@ -6,10 +6,11 @@ require_once("conf/db.php");
 	<div class="container">
 <?php include("inc/navbar.php");?>
 <?php
-if(!isset($_GET['product_id']) && !isset($_GET['start_year'])){
-echo 'Please select a email campaign';
+if(!isset($_GET['product_id'])){
+//echo 'Please select a email campaign';
 }
 //$product_id=12;
+$product_id=$_POST['product_id'];
 
 $start_year= $_POST['start_year'];
 $start_month= $_POST['start_month'];
@@ -22,28 +23,28 @@ $my_date = date($d);
 $today = date("Y-m-d H:i:s");
 $expire = $d;
  //from db
-echo "<br/> Today is ".$today;
+//echo "<br/> Today is ".$today;
 $today_time = strtotime($today);
 $expire_time = strtotime($expire);
 
 if ($expire_time < $today_time) { 
-echo "$expire_time is small <br/>";
+//echo "$expire_time is small <br/>";
  }
 
 echo $my_date;
 //INSERT INTO my_table (date_time) VALUES ('$my_date');
 $sql ="select userid from `product` where productid ='".$product_id."'";
-echo $sql."<br/>";
+//echo $sql."<br/>";
 $res=mysql_query($sql);
 while($result=mysql_fetch_array($res)){
 
 $publisher=$result[0];
-echo $publisher;
+//echo $publisher;
 }
 
-echo "The publisher is $publisher";
+//echo "The publisher is $publisher";
 //get email_ids
-$sql= "select EmailTemplateID,stage from  email_templates where ProductID='".$product_id."'";
+$sql= "select EmailTemplateID,Day from  email_templates where ProductID='".$product_id."'";
 echo $sql;
 $res=mysql_query($sql);
 
@@ -58,9 +59,11 @@ $my_date="$start_year-$start_month-$start_day $start_hour:$start_minute:0";
 
 $query="INSERT INTO `osuhack`.`scheduler` (`id`, `publisher`, `campaigner`, `email_id`, `list_name`, `time`, `flag`) VALUES ('','".$publisher."', '".$_SESSION[user_id]."', '".$result[0]."', '".$_POST['list_name']."', '".$my_date."', '0');";
 
-//echo "<br/>".$sql."</br>";
+echo "<br/>".$sql."</br>";
 	if(isset($product_id)){
 	$r=mysql_query($query);
+		if($r){
+		echo '<p id="message">Product Camaping Scheduled</p> ';}
 		}
 }
 
@@ -104,6 +107,8 @@ echo $options ."</select><br/>";
 </tr>
 
 </table>
+<input type="hidden" name="product_id" value="<?php echo $_GET['product_id']; ?>">
+
 <input type="submit" name="submit" value="Submit">
 </form>
 

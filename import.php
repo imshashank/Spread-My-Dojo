@@ -1,7 +1,8 @@
 <?require_once("conf/config_logged_in.php")?>
 <?php require_once('conf/db.php')?>
-<html>
-<body>
+<?include("inc/header.php");?>
+	<div class="container">
+<?php include("inc/navbar.php");?>
 <?php 
 echo "The id is" . $_SESSION[user_id]; 
 ?>
@@ -91,3 +92,7 @@ $res=mysql_query($sql);
 
 
 ?>
+
+</div>
+
+<?php include("inc/footer.php");?>
