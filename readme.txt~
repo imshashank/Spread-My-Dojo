@@ -16,7 +16,9 @@ schedule
 
 
 set from email in sendgrid
-
+//make sure list name is unique
 //create webform to let them add emails to DB from their website
+
+//use amazon SES in future
 
 

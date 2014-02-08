@@ -31,6 +31,10 @@ class User{
 		return ((isset($_SESSION[user_id]) && isset($_SESSION[user_name]))); //|| ( isset($_COOKIE[user_name]) && isset($_COOKIE[user_id])) );
 	}
 	
+	public function get_user_id(){
+		return (isset($_SESSION['user_id']))?$_SESSION['user_id']:"";
+	}
+	
 	public function getUsername(){
 		if (isset ($_SESSION[user_name]))
 			return $_SESSION[user_name];

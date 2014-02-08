@@ -65,7 +65,7 @@ if (($handle = fopen($_FILES["file"]["tmp_name"], "r")) !== FALSE) {
 </body>
 </html>
 <?php
-$row = 1;
+$row = 2;
 if (($handle = fopen($_FILES["file"]["tmp_name"], "r")) !== FALSE) {
     while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
         $num = count($data);

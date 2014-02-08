@@ -1,11 +1,11 @@
-      <div class="masthead">
+      <?
+	  $data=explode('/',$_SERVER['REQUEST_URI']);
+	  $page = $data[count($data)-1];
+	  ?>
+	  <div class="masthead">
         <h3 class="text-muted">Email Advertising</h3>
         <ul class="nav nav-justified">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Downloads</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
+          <li <?=(($page == "publisher.php" || $page == "product.php" || strpos($page,"add_emails.php")!== false)?"class='active'":"")?>><a href="publisher.php">Publisher</a></li>
+          <li <?=(($page == "campaigner.php")?"class='active'":"")?>><a href="campaigner.php">Campaigner</a></li>
         </ul>
       </div>

@@ -2,7 +2,7 @@
 <?
 if(isset($_POST['submit'])){
 	$errors = array();
-	$id = $product->register($_POST['title'],$_POST['description'],$_POST['category'],$_POST['price'],$_POST['commission']);
+	$id = $product->register($_POST['title'],$_POST['description'],$_POST['category'],$_POST['price'],$_POST['commission'],$user->get_user_id());
 	if($id == false){
 		$errors[] = "The product was not registered correctly";
 	}
@@ -16,6 +16,7 @@ if(isset($_POST['submit'])){
 					}
 					else{
 						move_uploaded_file($_FILES['image']['tmp_name'][$counter],"./img/".$id."/$name");
+						$product->set_image_for($id , "img/".$id."/$name",$name);
 					}
 					$counter++;
 				}
@@ -23,9 +24,6 @@ if(isset($_POST['submit'])){
 			else{
 					$errors[] = "we were not able to create a directory for your product";
 			}
-			echo "<pre>";
-			print_r($_FILES);
-			echo "</pre>";
 		}
 	}
 	if(!empty($errors)){
@@ -37,7 +35,17 @@ if(isset($_POST['submit'])){
 <?include("inc/header.php");?>
     <div class="container">
 	<?include("inc/navbar.php")?>
+	<?$data=explode('/',$_SERVER['REQUEST_URI']);
+	  $page = $data[count($data)-1];?>
 		<div class="row">
+			<br>
+			<div class="col-lg-12">
+				<ul class="nav nav-pills">
+				  <li <?=(($page == "publisher.php")?"class='active'":"")?> ><a href="publisher.php">Market Place</a></li>
+				  <li <?=(($page == "product.php")?"class='active'":"")?>><a href="product.php">Add Product</a></li>
+				</ul>
+			</div>
+			<br><br><br>
 			<div class="col-lg-6">
 				<h1>Add a New Product</h1>
 				<?$cats = $category->get_all_main_categories();?>

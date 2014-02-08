@@ -21,7 +21,7 @@ $query="SELECT COUNT(*) from `email_ids` where user_id='".$_SESSION[user_id]."' 
 
 $r=mysql_query($query);
 while($x=mysql_fetch_array($r)){
-echo " <tr> <td>".$result[0] ."</td><td> $x[0] </td></tr>";
+echo " <tr> <td><a href='list_emails.php?list_name=".$result[0] ."'>".$result[0]."</a></td><td> $x[0] </td></tr>";
 }}
 ?>
 </table>

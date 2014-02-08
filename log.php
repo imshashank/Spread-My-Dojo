@@ -7,8 +7,9 @@ if(isset($_POST['signup'])){
 	$error = array();
 
 	
-echo select("users", "UserId, Fname, Lname" , $where = "Email = '$email' AND Password = '$password'", "" , "", $limit = "1" );
 
+
+print_r( $db->select("user", "pass, Fname, Lname" , "Email = '".$_POST['email']."'" , "" , "",  "1" ));
 
 
 
@@ -27,7 +28,7 @@ echo select("users", "UserId, Fname, Lname" , $where = "Email = '$email' AND Pas
 <html>
 </body>
 
-<form class="form-horizontal" role="form" method="post" action="<?php login.php ?">
+<form class="form-horizontal" role="form" method="post" action="log.php">
   <div class="form-group">
     <label for="Email" class="col-sm-2 control-label">Email</label>
     <div class="col-sm-10">
@@ -42,6 +43,11 @@ echo select("users", "UserId, Fname, Lname" , $where = "Email = '$email' AND Pas
     </div>
   </div>
 
+
+
+
+
+mk      <input type="submit" class="form-control"  name="signup">
 
 </form>
 
