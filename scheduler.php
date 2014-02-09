@@ -57,7 +57,7 @@ $my_date="$start_year-$start_month-$start_day $start_hour:$start_minute:0";
 
 
 
-$query="INSERT INTO `osuhack`.`scheduler` (`id`, `publisher`, `campaigner`, `email_id`, `list_name`, `time`, `flag`) VALUES ('','".$publisher."', '".$_SESSION[user_id]."', '".$result[0]."', '".$_POST['list_name']."', '".$my_date."', '0');";
+$query="INSERT INTO `osuhack`.`scheduler` (`id`, `publisher`, `campaigner`, `email_id`, `list_name`, `time`, `flag`,`product_id`) VALUES ('','".$publisher."', '".$_SESSION[user_id]."', '".$result[0]."', '".$_POST['list_name']."', '".$my_date."', '0','".$product_id."');";
 
 echo "<br/>".$sql."</br>";
 	if(isset($product_id)){

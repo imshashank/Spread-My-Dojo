@@ -7,9 +7,9 @@
     <title>Email Advertising</title>
 
     <!-- Bootstrap -->
-    <link href="/spread2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://spreadmydojo.com/css/bootstrap.min.css" rel="stylesheet">
 	<!--<link href="/osu_hackathon_2014/css/jasny-bootstrap.min.css" rel="stylesheet">-->
-	<link href="/spread2/css/style.css" rel="stylesheet">
+	<link href="http://spreadmydojo.com/css/style.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
