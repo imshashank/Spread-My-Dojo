@@ -1,4 +1,4 @@
-<?require_once("conf/config_logged_in.php");
+<?require_once("conf/config.php");
 require_once("conf/db.php");
 ?>
 
@@ -59,6 +59,9 @@ $price = $price*100;?>
 <input type="hidden" name="commission" value="<?php echo $commission; ?>">
 <input type="hidden" name="publisher" value="<?php echo $publisher; ?>">
 <input type="hidden" name="campaigner" value="<?php echo $campaigner; ?>">
+<input type="hidden" name="title" value="<?php echo $title; ?>">
+<input type="hidden" name="product_id" value="<?php echo $product_id; ?>">
+
 </form>
 </td></tr>
 </table>

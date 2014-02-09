@@ -16,6 +16,7 @@ $user = new User($db);
 $product = new Product($db);
 $category = new Category($db);
 $email_template =  new EmailTemplate($db);
+$schedule =  new Schedule($db);
 
 ?>
 <?if(!$user->logged_in()){

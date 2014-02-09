@@ -1,4 +1,10 @@
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <br>
+	<div id="footer">
+		<div class="container">
+			<p class="text-muted">Spread My Dojo | Purdue Hackathon 2014</p>
+		</div>
+    </div>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="http://spreadmydojo.com/js/bootstrap.min.js"></script>

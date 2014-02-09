@@ -4,23 +4,45 @@
 	<div class="container">
 <?php include("inc/navbar.php");?>
 <?php 
-echo "The id is" . $_SESSION[user_id]; 
+//echo "The id is" . $_SESSION[user_id]; 
 ?>
-<form action="import.php" method="post"
-enctype="multipart/form-data">
-List Namw: <input type="text" name="list_name"><br>
-Category: <input type="text" name="category"><br>
-
-<label for="file">Filename:</label>
-<input type="file" name="file" id="file"><br>
-
-<input type="submit" name="submit" value="Submit">
+<br>
+<div class="col-lg-12">
+	<ul class="nav nav-pills">
+	  <li <?=(($page == "import.php")?"class='active'":"")?> ><a href="import.php">Import</a></li>
+	  <li <?=(($page == "market.php")?"class='active'":"")?>><a href="market.php">Market</a></li>
+	  <li <?=(($page == "scheduled.php")?"class='active'":"")?>><a href="scheduled.php">Scheduled</a></li>
+	  <li <?=(($page == "sent.php")?"class='active'":"")?>><a href="sent.php">Sent</a></li>
+	</ul>
+</div>
+<br><br>
+<div class="offset3 span6" style="margin-left: 30%;margin-top: 41px;">
+<h2> Import Contacts to a list </h2>
+<form action="import.php" method="post" enctype="multipart/form-data" class="form-horizontal" role="form" >
+<div class="form-group">
+	<label for="list_name" class="col-sm-2 control-label">Enter a name for the List:</label>
+	<div class="col-sm-10">
+		<input type="text" id="list_name" name="list_name"><br>
+	</div>
+</div>
+<div class="form-group">
+	<label for="category" class="col-sm-2 control-label">Category</label>
+	<div class="col-sm-10">
+	<input type="text" id="category" name="category"><br>
+	</div>
+</div>
+<div class="form-group">
+<label for="file" class="col-sm-2 control-label" >Filename:</label>
+	<div class="col-sm-10"><input type="file" name="file" id="file">
+	</div>
+</div>
+<input type="submit" name="submit" value="Submit" style="margin-left: 134px;">
 </form>
-
+</div>
 <?php
 
-echo "List name" .$_POST["list_name"]."</br>";
 if(isset($_POST["list_name"])){
+echo "List name" .$_POST["list_name"]."</br>";
 $url = 'https://api.sendgrid.com/api/newsletter/lists/add.json';
 $data = array("name" => $_POST["list_name"], "api_user" => "osuhack","api_key"=> "osu_hack1");
 

@@ -31,7 +31,7 @@ if ($expire_time < $today_time) {
 //echo "$expire_time is small <br/>";
  }
 
-echo $my_date;
+//echo $my_date;
 //INSERT INTO my_table (date_time) VALUES ('$my_date');
 $sql ="select userid from `product` where productid ='".$product_id."'";
 //echo $sql."<br/>";
@@ -45,13 +45,13 @@ $publisher=$result[0];
 //echo "The publisher is $publisher";
 //get email_ids
 $sql= "select EmailTemplateID,Day from  email_templates where ProductID='".$product_id."'";
-echo $sql;
+//echo $sql;
 $res=mysql_query($sql);
 
 while($result=mysql_fetch_array($res)){
 //$result[0] = email_id
 $start_day=$start_day+ $result[1];
-echo "Start date is $start_day ";
+//echo "Start date is $start_day ";
 $my_date="$start_year-$start_month-$start_day $start_hour:$start_minute:0";
 //$my_date = date($d);
 
@@ -67,16 +67,24 @@ echo "<br/>".$sql."</br>";
 		}
 }
 
+$q= "SELECT name from product where productid='".$_GET['product_id']."'";
+$res=mysql_query($q);
+while($result=mysql_fetch_array($res)){
+$n=$result[0];
+}
+
+echo "<div style='text-align: center;margin-top: 26px;margin-bottom: -32px;margin-left: -71px;font-size: 33px;font-weight: 800;'>
+	 Product Name: ".$n ."</div>";
 
 ?>
-<form action="scheduler.php" method="post" enctype="multipart/form-data">
-List Name: <input type="text" name=""><br>
+<form role="form" class="form-horizontal" action="scheduler.php" method="post" enctype="multipart/form-data" style="margin-top: 39px;
+margin-left: 36%;">
 <?
 
 $sql ="SELECT DISTINCT `list_name` FROM `email_ids` where user_id='".$_SESSION[user_id]."';";
 //echo $sql;
 $res=mysql_query($sql);
-echo "<br/>Selecy a list <select name='list_name'>";
+echo "<br/>Select a list <select name='list_name' style='margin-bottom: 15px;'>";
 while($result=mysql_fetch_array($res)){
 	$query="SELECT COUNT(*) from `email_ids` where user_id='".$_SESSION[user_id]."' AND list_name='".$result[0]."';";
 	$r=mysql_query($query);
@@ -109,7 +117,7 @@ echo $options ."</select><br/>";
 </table>
 <input type="hidden" name="product_id" value="<?php echo $_GET['product_id']; ?>">
 
-<input type="submit" name="submit" value="Submit">
+<input type="submit" name="submit" value="Submit" class="btn btn-primary" style="margin-top: 15px;margin-left: 88px;">
 </form>
 
 

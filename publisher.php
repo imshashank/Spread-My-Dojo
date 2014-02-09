@@ -17,9 +17,7 @@
 			if(!empty($prods)){
 				foreach($prods as $prod){
 					$img = $product->get_image_for($prod['ProductID'],1);
-					print_r($img);
 					$img = $img[0];
-					echo $img;
 					?>
 					<div class="col-sm-6 col-md-4">
 						<div class="thumbnail">
@@ -31,8 +29,9 @@
 							<p>Commission: $<?=$prod['Commission']?></p>
 							<?if(!$email_template->has_all_templates($prod['ProductID'])){?>
 								<p><a href="add_emails.php?p=<?=$prod['ProductID']?>" class="btn btn-primary" role="button">Add Emails</a></p>
-							<?}else{?>
-								<p><a href="view_emails.php?p=<?=$prod['ProductID']?>" class="btn btn-info" role="button">View Emails</a></p>
+							<?}
+							if($email_template->has_templates($prod['ProductID'])){?>
+								<p><a href="edit_emails.php?p=<?=$prod['ProductID']?>" class="btn btn-info" role="button">View/Edit Emails</a></p>
 							<?}?>
 						  </div>
 						</div>

@@ -5,36 +5,37 @@
 
       <!-- Jumbotron -->
       <div class="jumbotron">
-        <h1>Marketing stuff!</h1>
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p>
+        <h1>Spread My Dojo</h1>
+        <p class="lead">A simple email marketing tool to help bloggers & web admins utilize their subscribers list and let content creators reach more users.</p>
+<p><b>We do the hard work, so you don't have to. </b></p>
+        <p><a class="btn btn-lg btn-success" href="login.php" role="button">Get started today</a></p>
       </div>
 
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-lg-4">
-          <h2>Safari bug warning!</h2>
-          <p class="text-danger">Safari exhibits a bug in which resizing your browser horizontally causes rendering errors in the justified nav that are cleared upon refreshing.</p>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+          <h2>Simpler Than Fixing A Bulb</h2>
+          <p class="text-danger">We make it super simple to get started. Just tell us about your product, upload an image or two, use our templates to create high converting email campaigns, and just start making money.</p>
+          <p><a class="btn btn-primary" href="login.php" role="button">View details &raquo;</a></p>
         </div>
         <div class="col-lg-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+          <h2>We Handle Everything</h2>
+          <p>"Spread my Dojo", takes care of everything. We make sure your email reach subscribers with 100% deliverability, we take of creating payment links so no more waiting for approval from sites, we divide commissions among you,generate reports, and tell you what is happening. </p>
+          <p><a class="btn btn-primary" href="login.php" role="button">View details &raquo;</a></p>
        </div>
         <div class="col-lg-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+          <h2>Its Free To Start</h2>
+          <p>Get started now, upload your subscriber list or add your product. We want to grow by helping you guys make money.So get started.</p>
+          <p><a class="btn btn-primary" href="login.php" role="button">View details &raquo;</a></p>
         </div>
       </div>
 
       <!-- Site footer -->
+<!--
       <div class="footer">
-        <p>&copy; Company 2014</p>
+      <p>&copy; Spread My DOJO  2014</p>
       </div>
 
     </div>
-
+-->
 <?include("inc/footer.php");?>

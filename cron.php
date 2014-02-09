@@ -38,7 +38,7 @@ $publisher=$result[1];
 $campaigner=$result[2];
 $product_id=$result[7];
 echo $email_id;
-$q="Select * from email_ids where list_name='".$list_name."' LIMIT 0, 5 ;";
+$q="Select * from email_ids where list_name='".$list_name."' LIMIT 0, 500;";
 echo $q;
 $q=mysql_query($q);
 while($r=mysql_fetch_array($q)){
@@ -50,12 +50,14 @@ echo $y;
 $y=mysql_query($y);
 while($x=mysql_fetch_array($y)){
 $body=$x[2];
+$body=base64_decode($body);
 $subject=$x[1];
 }
 echo "</br> Sending email to $mail and $name with subject $subject and $body";
 $sendgrid_username = 'osuhack';
 $sendgrid_password = 'osu_hack1';
 $to                = 'agarwal.202@osu.edu';
+$from= 'mail@spreadmydojo.com';
 
 $link="http://spreadmydojo.com/pay.php?publisher='".$publisher."'&campaigner='".$campaigner."'&product_id='".$product_id."'";
 echo $link;
@@ -63,7 +65,7 @@ $array = array("$link");
 $sendgrid = new SendGrid($sendgrid_username, $sendgrid_password, array("turn_off_ssl_verification" => true));
 $email    = new SendGrid\Email();
 $email->addTo($mail)->
-       setFrom($to)->
+       setFrom($from)->
        setSubject($subject)->
        setText('Please switch to HTML version to see the full email')->
        setHtml($body)->

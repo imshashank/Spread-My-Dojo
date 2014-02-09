@@ -13,4 +13,9 @@ define ( DB_DB, "osuhack");
 
 $db = new Database ( DB_HOST, DB_USER, DB_PASS, DB_DB );
 $user = new User($db);
+$product = new Product($db);
+$category = new Category($db);
+$email_template =  new EmailTemplate($db);
+$schedule =  new Schedule($db);
+
 ?>

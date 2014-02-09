@@ -50,13 +50,14 @@ if(isset($_POST['submit'])){
 							<li class="list-group-item">Price: $<?=$prod['Price']?></li>
 							<li class="list-group-item">Commission: $<?=$prod['Commission']?></li>
 						</ul>
+						<div class="alert alert-warning">Please make sure you include the text "%LINK%" in your email at least once. This link will allow the recipient to purchase the item.</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-lg-6">
 						<h4>Stage <?=$stage?></h4>
 						<p>Set Email Template</p>
-						<form role="form" method="POST" action="add_emails.php" enctype="multipart/form-data">
+						<form role="form" method="POST" action="add_emails.php">
 							<input type="hidden" name="stage" value="<?=($stage+1)?>" >
 							<input type="hidden" name="p" value="<?=($p_id)?>" >
 							<div class="form-group">
@@ -74,7 +75,7 @@ if(isset($_POST['submit'])){
 									<span class="input-group-addon">Days after the first email</span>
 								</div>
 							</div>
-							<input type="submit" name="submit" value="next">
+							<input type="submit" name="submit" class="btn btn-default" value="next">
 						</form>
 					</div>
 				</div>
