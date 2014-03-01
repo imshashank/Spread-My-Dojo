@@ -1,6 +1,6 @@
 <?require_once("conf/config_logged_in.php");
-require_once("conf/db.php");?>
-<?include("inc/header.php");
+require_once("conf/db.php");
+include("inc/header.php");
 require 'vendor/autoload.php';
 
 $sendgrid_username = 'osuhack';
@@ -83,7 +83,6 @@ $n=mysql_query($m);
 }
 
 }
-
 
 ?>
 </div>
