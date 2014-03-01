@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Mashape/unirest-php.git",
-                "reference": "f3af9e81967489a8256829906ce4524d41cbf250"
+                "reference": "e6682a5ad1e103606a6d9d44efdf6d9cb619410d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Mashape/unirest-php/zipball/f3af9e81967489a8256829906ce4524d41cbf250",
-                "reference": "f3af9e81967489a8256829906ce4524d41cbf250",
+                "url": "https://api.github.com/repos/Mashape/unirest-php/zipball/e6682a5ad1e103606a6d9d44efdf6d9cb619410d",
+                "reference": "e6682a5ad1e103606a6d9d44efdf6d9cb619410d",
                 "shasum": ""
             },
             "require": {
@@ -52,7 +52,7 @@
                 "http",
                 "rest"
             ],
-            "time": "2014-01-14 18:34:19"
+            "time": "2014-02-19 19:20:52"
         },
         {
             "name": "sendgrid/sendgrid",
@@ -135,7 +135,9 @@
             "authors": [
                 {
                     "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
                 },
                 {
                     "name": "Chris Corbyn"

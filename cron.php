@@ -21,11 +21,12 @@ $email    = new SendGrid\Email();
 
 //import email from the email DB and start sending
 
+date_default_timezone_set('America/New_York');
 $today = date("Y-m-d H:i:s");
 $today_time = strtotime($today);
 
 $sql="select * from `scheduler` where flag=0 && time <'".$today."' ORDER BY time ASC; ";
-//echo $sql;
+echo $sql;
 
 $res=mysql_query($sql);
 
@@ -38,7 +39,7 @@ $publisher=$result[1];
 $campaigner=$result[2];
 $product_id=$result[7];
 echo $email_id;
-$q="Select * from email_ids where list_name='".$list_name."' LIMIT 0, 500;";
+$q="Select * from email_ids where list_name='".$list_name."' LIMIT 0, 10000;";
 echo $q;
 $q=mysql_query($q);
 while($r=mysql_fetch_array($q)){
