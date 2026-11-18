@@ -2,7 +2,7 @@ Spread My Dojo
 ======
 
 by
-Shashank Agarwal
+[Shashank Agarwal](https://www.linkedin.com/in/shashankagarwal2/)
 
 Nima
 
